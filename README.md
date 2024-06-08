@@ -54,9 +54,14 @@ split_rate = rate * split / 100
 
 ```
 
+Ставим зависимости (желательно в окружение)
+```shell
+pip indtall -r reqirements.txt
+```
+
 
 Для запуска:
 
 ```shell
-$ python3 main.py --file_name well_data.xlsx 
+$ python3 main.py --file_name well_data.xlsx
 ```
