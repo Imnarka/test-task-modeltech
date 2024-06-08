@@ -9,9 +9,9 @@ from abc import (
 from typing import Dict, List
 
 
-class AbstractDataReader(ABC):
+class AbstractDataWorker(ABC):
     """
-    Абстрактный класс, определяющий интерфейс для чтения данных из различных источников.
+    Абстрактный класс, определяющий интерфейс для работы с файлами
     """
     @abstractmethod
     def read_data(self, file_name: str) -> Dict[str, pd.DataFrame]:
@@ -37,7 +37,7 @@ class AbstractDataReader(ABC):
         ...
 
     @staticmethod
-    @abstractmethod # abstract static method is deprecated in python 3.3
+    @abstractmethod  # abstract static method is deprecated in python 3.3
     def save_to_json(dataframe: pd.DataFrame, file_name: str) -> None:
         """
         Сохраняет DataFrame в JSON файл в формате 'records'.
@@ -48,9 +48,9 @@ class AbstractDataReader(ABC):
         """
 
 
-class ExcelDataReaderMixin(AbstractDataReader):
+class ExcelDataWorkerMixin(AbstractDataWorker):
     """
-    Класс-mixin для чтения данных из Excel файла.
+    Класс-mixin для работы с файлами Excel
     """
     def read_data(self, file_name: str) -> Dict[str, pd.DataFrame]:
         """
@@ -94,7 +94,7 @@ class ExcelDataReaderMixin(AbstractDataReader):
         dataframe.to_json(file_name, orient='records')
 
 
-class DataProcessor(ExcelDataReaderMixin):
+class DataProcessor(ExcelDataWorkerMixin):
     """
     Класс для обработки данных.
     """

@@ -8,7 +8,7 @@ def parse_args() -> Any:
     """
     Парсит аргументы командной строки.
 
-    Returns:
+    :arg
         Namespace: Аргументы командной строки.
     """
     parser = ArgumentParser(description='Process well data.')
@@ -27,7 +27,7 @@ def main() -> None:
     df = processor.allocate_calc()
     processor.save_to_json(df, 'allocated_calc.xlsx')
     processor.save_to_json(df,  'allocated_calc.json')
-    # print(processor.allocate_calc())
+
 
 if __name__ == '__main__':
     main()
