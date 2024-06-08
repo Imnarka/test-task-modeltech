@@ -58,5 +58,5 @@ split_rate = rate * split / 100
 Для запуска:
 
 ```shell
-$ python3 main.py --file_name well_data.xlsx
+$ python3 main.py --file_name well_data.xlsx 
 ```
