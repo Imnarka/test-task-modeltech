@@ -56,7 +56,7 @@ split_rate = rate * split / 100
 
 Ставим зависимости (желательно в окружение)
 ```shell
-pip indtall -r reqirements.txt
+pip install -r reqirements.txt
 ```
 
 
